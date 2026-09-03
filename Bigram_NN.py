@@ -3,6 +3,10 @@ import torch.nn as nn
 from torch.nn import functional as F
 
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+torch.set_default_device(device)
+
 def get_batch (split):
     data = train_data if split == "train" else val_data
     ix = torch.randint(len(data) - block_size, (batch_size,))
