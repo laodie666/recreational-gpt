@@ -1,7 +1,7 @@
 # Ref: https://github.com/ArslanJajja1/bigram-language-model/blob/main/bigram_scratch.py
 import random
 
-class BigramModelPython:
+class BigramModelCounting:
     def __init__(self):
         self.bigram_counts = {}
         self.bigram_probs = {}
@@ -60,6 +60,6 @@ class BigramModelPython:
 
 if __name__ == "__main__":
     data = open("input.txt").read()
-    model = BigramModelPython()
+    model = BigramModelCounting()
     model.train(data)
     print(model.generate("h"))
